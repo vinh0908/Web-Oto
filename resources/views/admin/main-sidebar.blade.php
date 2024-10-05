@@ -51,6 +51,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('product_brand.list') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Product Brand
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="{{ route('admin.post.list') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>

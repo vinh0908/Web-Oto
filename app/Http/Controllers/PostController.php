@@ -44,7 +44,7 @@ class PostController extends Controller
             'datetime' => $request->datetime,
             'name' => $request->name,
             'des' => $request->des,
-            // 'slug' => $request->slug
+            'slug' => $request->slug
         ]);
 
         return redirect()->route('admin.post.list');

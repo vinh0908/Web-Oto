@@ -11,24 +11,23 @@
                 <div class="sidebar">
                     <div class="sidebar__item">
                         <h4>Department</h4>
-                        {{-- <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                        </ul> --}}
+
                         <div class="row">
                             <select name="category" id="select-category">
                                 <option value="all">All Category</option>
                                 @foreach ($productCategories as $productCategory)
-                                    <option {{ request()->query('category') == $productCategory->id ? 'selected' : '' }} 
-                                        value="{{ $productCategory->id }}">{{  $productCategory->name }}</option>
+                                    <option {{ request()->query('category') == $productCategory->id ? 'selected' : '' }}
+                                        value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <select name="brand" id="select-brand">
+                                <option value="all">All Brand</option>
+                                @foreach ($productBrands as $productBrand)
+                                    <option {{ request()->query('brand') == $productBrand->id ? 'selected' : '' }}
+                                        value="{{ $productBrand->id }}">{{ $productBrand->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -50,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="col-lg-9 col-md-7">
@@ -71,7 +70,7 @@
                                 <h6><span>{{ $products->total() }}</span> Products found</h6>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="row">
@@ -101,6 +100,9 @@
 </section>
 </form>
 
+
+
+
 @endsection
 
 @section('my-script')
@@ -114,10 +116,10 @@
             $('#form-product-list').submit();
         });
 
-        $( ".price-range").slider( "values", 
-        [ 
+        $( ".price-range").slider( "values",
+        [
             "{{ is_null(request()->query('min')) ? $min : request()->query('min') }}",
-            "{{ is_null(request()->query('max')) ? $max : request()->query('max') }}" 
+            "{{ is_null(request()->query('max')) ? $max : request()->query('max') }}"
         ]);
 
         $("#minamount").val("{{ is_null(request()->query('min')) ? $min : request()->query('min') }}");

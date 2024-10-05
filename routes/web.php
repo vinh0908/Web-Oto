@@ -6,6 +6,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductBrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -60,13 +61,17 @@ Route::prefix('admin')->middleware('auth.admin')->group(function(){
     Route::get('post/edit/{id}', [PostController::class, 'getPostDetail'])->name('post.detail');
     Route::post('post/edit/{id}', [PostController::class, 'editPost'])->name('post.edit');
 
-
     //Product Category
     Route::get('product_category',[ProductCategoryController::class, 'getCategories'])->name('product_category.list');
     Route::get('product_category/add', [ProductCategoryController::class, 'getViewAddCategory'])->name('product_category.add');
     Route::post('product_category/save', [ProductCategoryController::class, 'addProductCategory'])->name('product_category.save');
     Route::post('product_category/delete/{id}', [ProductCategoryController::class, 'deleteCategories'])->name('product_category.delete');
 
+    //Product Brand
+    Route::get('product_brand',[ProductBrandController::class, 'getBrand'])->name('product_brand.list');
+    Route::get('product_brand/add', [ProductBrandController::class, 'getViewAddBrand'])->name('product_brand.add');
+    Route::post('product_brand/save', [ProductBrandController::class, 'addProductBrand'])->name('product_brand.save');
+    Route::post('product_brand/delete/{id}', [ProductBrandController::class, 'deleteBrand'])->name('product_brand.delete');
 
     //Dashboard
     Route::get('/dashboard',[DashboadController::class, 'index'])->name('dashboard.index');
@@ -93,7 +98,6 @@ Auth::routes();
 
 Route::get('product-list',[HomeController::class, 'getProductList'])->name('product.list');
 Route::get('blog',[HomeController::class, 'getBlog'])->name('blog.list');
-Route::get('about',[HomeController::class, 'getAboutUs'])->name('aboutus.list');
 Route::get('contact',[HomeController::class, 'getContact'])->name('contact.list');
 Route::get('san-pham/{categorySlug?}',[HomeController::class, 'getSanpham'])->name('tongsanpham');
 

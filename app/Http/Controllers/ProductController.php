@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductBrand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ProductController extends Controller
 {
-    public function getProduct(){
+    public function getProduct()
+    {
         //lay toan bo san pham
         //Eloquent
 
 
         //SELECT * FROM `products` ORDER BY `products`.`id` DESC
+        // $products = Product::with('productBrand')->orderBy('id', 'desc')->get();
         $products = Product::orderBy('id','desc')->get();
         //Lay toan bo product category
         // $productCategories = ProductCategory::all();
@@ -23,11 +26,12 @@ class ProductController extends Controller
 
 
         return view('admin.product.list')
-        ->with('datas', $products);
+            ->with('datas', $products);
         // ->with('productCategories', $productCategories);
     }
 
-    public function addProduct(Request $request){
+    public function addProduct(Request $request)
+    {
 
         //validate gia tri nguoi dung gui len
         $request->validate([
@@ -38,7 +42,8 @@ class ProductController extends Controller
             'weight' => 'required',
             'image' => 'image|mimes:png,jpg,jpeg,gif,svg|max:10240',
             'slug' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'brand_id' => 'required'
         ]);
 
 
@@ -57,6 +62,7 @@ class ProductController extends Controller
             'qty' => $request->qty,
             'weight' => $request->weight,
             'category_id' => $request->category_id,
+            'brand_id' => $request->brand_id,
             'slug' => $request->slug
         ]);
 
@@ -67,7 +73,8 @@ class ProductController extends Controller
         return redirect()->route('admin.product.list');
     }
 
-    public function deleteProduct($id){
+    public function deleteProduct($id)
+    {
         //B1 : tim record nao tuong ung vs id nay`
         //select * from products where id = $id;
         $product = Product::find($id);
@@ -77,7 +84,8 @@ class ProductController extends Controller
         return redirect()->route('admin.product.list')->with('success', 'Xóa danh mục thành công !');
     }
 
-    public function getProductDetail($id){
+    public function getProductDetail($id)
+    {
         //B1 : tim record nao tuong ung vs id nay`
         $product = Product::find($id);
 
@@ -85,11 +93,12 @@ class ProductController extends Controller
         // $productCategories = ProductCategory::all();
 
         return view('admin.product.edit')
-        // ->with('productCategories', $productCategories)
-        ->with('product', $product);
+            // ->with('productCategories', $productCategories)
+            ->with('product', $product);
     }
 
-    public function editProduct(Request $request, $id){
+    public function editProduct(Request $request, $id)
+    {
         //validate gia tri nguoi dung gui len
         $request->validate([
             'name' => 'required',
@@ -110,11 +119,12 @@ class ProductController extends Controller
         $product->qty = $request->qty;
         $product->weight = $request->weight;
         $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
 
         if ($request->image) {
             $imageName = uniqid() . '_' . $request->image->getClientOriginalName();
             $request->image->move(public_path('images'), $imageName);
-            unlink("images/".$product->image);
+            unlink("images/" . $product->image);
 
             $product->image = $imageName;
         }
@@ -125,17 +135,18 @@ class ProductController extends Controller
         // return view('admin.product.edit')
         // ->with('product', $product);
         return redirect()->route('product.edit', $product->id)->with('success', 'Edit successfully !');
-        // return redirect()->route('product.edit', $product->id)->with('danger', 'Edit failed !');
     }
 
-    public function getViewAddProduct(){
-        // $productCategories = ProductCategory::orderBy('id', 'desc')->get();
-        // $productCategories = ProductCategory::all();
-        return view('admin.product.add');
-        // ->with('productCategories', $productCategories);
+    public function getViewAddProduct()
+    {
+        $productCategories = ProductCategory::all();
+        $productBrands = ProductBrand::all();
+
+        return view('admin.product.add', compact('productCategories', 'productBrands'));
     }
 
-    public function getSlug(Request $request){
+    public function getSlug(Request $request)
+    {
 
         $name = $request->title;
 
@@ -147,7 +158,8 @@ class ProductController extends Controller
         return response()->json(['slug' => $slug]);
     }
 
-    public function getProductBySlug($slug){
+    public function getProductBySlug($slug)
+    {
         //Tim product vs slug = slug nguoi dung truyen len
         //select * from products where slug = 'peter-rosenbaum';
         // $product = Product::where('slug','like', '%'.$slug.'%')->first();
@@ -159,16 +171,12 @@ class ProductController extends Controller
 
         $product = Product::where('slug', $slug)->first();
 
-// dd($product);
+        // dd($product);
 
-        if(!$product){
+        if (!$product) {
             return redirect()->route('home');
         }
 
         return view('frontend.product_detail')->with('product', $product);
     }
-
 }
-
-
-

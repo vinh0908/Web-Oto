@@ -25,6 +25,7 @@ class ProductFactory extends Factory
             'weight' => fake()->randomFloat(2, 0, 999),
             'active' => 1,
             'category_id' => rand(1, 5),
+            'brand_id' => rand(1, 5),
         ];
     }
 }

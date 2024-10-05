@@ -20,11 +20,16 @@ class Product extends Model
         'qty',
         'weight',
         'category_id',
+        'brand_id',
         'slug'
     ];
 
     public function getCategory(){
         return $this->belongsTo(ProductCategory::class, 'category_id');
+    }
+
+    public function getBrand(){
+        return $this->belongsTo(ProductBrand::class, 'brand_id');
     }
 
     public function sluggable(): array

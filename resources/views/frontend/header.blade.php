@@ -1,113 +1,159 @@
-<header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__top__left">
-                        <ul>
-                            <li><i class="fa fa-envelope"></i> lehuuvinh159@gmail.com</li>
-                            <li>Miễn Phí Giao Hàng Hóa Đơn Trên 100k</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__top__right">
-                        <div class="header__top__right__social">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-pinterest"></i></a>
-                        </div>
-                        <div class="header__top__right__language">
-                            <img src="{{ asset('images/language.png') }}" alt="">
-                            <div>Vietnamese</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">Vietnamese</a></li>
-                                <li><a href="#">English</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__top__right__auth">
-                            @if (!Auth::check())
-                                {{-- <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a> --}}
-                            @else
-                                <div class="header__top__right__language">
-                                    <div>{{ Auth::user()->name }}</div>
-                                    <span class="arrow_carrot-down"></span>
-                                    <ul>
-                                        <li><a href="admin">My Order</a></li>
-                                        <form method="post" action="{{ route('logout') }}" id="formLogout">
-                                            @csrf
-                                            <li><a href="#" onclick="document.getElementById('formLogout').submit();">Logout</a></li>
-                                        </form>
-                                    </ul>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
+<header>
+    <div class="contact-info">
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+123456789">+123 456 789</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2">
-                <div class="header__logo">
-                    <a href="{{ route('home') }}"><img src="https://i.pinimg.com/originals/be/4a/c8/be4ac831924de42758e6e9efa5edcf2d.jpg" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <nav class="header__menu">
-                    <ul>
-                        <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('aboutus.list') }}">Shop</a></li>
-                        <li><a href="{{ route('tongsanpham') }}">Sản phẩm</a>
-                            {{-- <ul class="header__menu__dropdown">
-                                <li><a href="#">Shop Details</a></li>
-                                <li><a href="/shopping-cart">Shoping Cart</a></li>
-                                <li><a href="{{ route('checkout') }}">Check Out</a></li>
-                                <li><a href="#">Blog Details</a></li>
-                            </ul> --}}
-                        </li>
-                        <li><a href="./contact.html">Khuyến Mãi</a></li>
-                        <li><a href="{{ route('blog.list') }}">Blog</a></li>
-                        <li><a href="{{ route('contact.list') }}">Liên Hệ</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-2">
-                <div class="header__cart">
-                    @php
-                        $cart = session()->get('cart') ?? [];
-                        $total = 0;
-                        foreach ($cart as $item) {
-                            $total += $item['price'] * $item['qty'];
-                        }
-                    @endphp
-                    <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li>
-                            <a href="{{ route('shopping.cart') }}"><i class="fa fa-shopping-bag"></i>
-                            <span id="total-items-cart">
+
+    <nav style="padding: 0px;" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="d-flex justify-content-end container">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ asset('frontend-oto/image/auto-car-logo-template-vector-icon.jpg') }}" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" id="navToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse" id="navbarNav">
+                @php
+                    $cart = session()->get('cart') ?? [];
+                    $total = 0;
+                    foreach ($cart as $item) {
+                        $total += $item['price'] * $item['qty'];
+                    }
+                @endphp
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-person"></i>Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-star"></i>Wishlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('checkout') }}"><i class="bi bi-bag-check"></i>Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('shopping.cart') }}"><i class="bi bi-cart"></i>
+                            <span
+                                id="total-items-cart">
                                 {{ is_array(session()->get('cart')) ? count(session()->get('cart')) : 0 }}
                             </span>
-                            </a>
-                            </li>
-                    </ul>
-                    <div class="header__cart__price">Tổng: <span id="total-price-cart">{{ number_format($total, 2) }}vnđ</span></div>
+                            Cart
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        @if (!Auth::check())
+                            <a class="nav-link" href="{{ route('login') }}"><i
+                                    class="bi bi-box-arrow-in-right"></i>Login</a>
+                        @else
+                            <div class="header__top__right__language">
+                                <div><i class="bi bi-box-arrow-in-right"></i>{{ Auth::user()->name }}</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="admin">My Order</a></li>
+                                    <form method="post" action="{{ route('logout') }}" id="formLogout">
+                                        @csrf
+                                        <li><a href="#"
+                                                onclick="document.getElementById('formLogout').submit();">Logout</a>
+                                        </li>
+                                    </form>
+                                </ul>
+                            </div>
+                        @endif
+                    </li>
+                    <li>
+                        <div class="header__cart__price">Tổng:
+                            <span id="total-price-cart">{{ number_format($total, 2) }}vnđ</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 1">
+                <div class="text">
+                    <h1>BMW</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis assumenda soluta esse
+                        recusandae provident tempora odio. Quae suscipit voluptate distinctio sed illum rem corrupti
+                        sit officiis, unde iusto est perspiciatis.</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 2">
+                <div class="text">
+                    <h1>BMW</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla laudantium natus!
+                        Necessitatibus qui impedit corporis. Iusto, sed, facilis quia expedita tempore atque ipsam
+                        sapiente, culpa accusamus sint totam. Harum!</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 3">
+                <div class="text">
+                    <h1>BMW</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque est alias facilis nesciunt
+                        eligendi esse atque blanditiis dolorem eum numquam? Debitis assumenda et placeat molestiae
+                        eius cumque ex eum dolore.</p>
+                    <button class="buy-now">Buy Now</button>
                 </div>
             </div>
         </div>
-        <div class="humberger__open">
-            <i class="fa fa-bars"></i>
-        </div>
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
     </div>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <ul style="font-size: 1.4rem;" class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-color nav-link active" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    {{-- <a class="nav-color nav-link" href="{{ route('aboutus.list') }}">Shop</a> --}}
+                    <a class="nav-color nav-link" href="">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-color nav-link" href="{{ route('tongsanpham') }}">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-color nav-link" href="{{ route('blog.list') }}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-color nav-link" href="{{ route('contact.list') }}">Contact</a>
+                </li>
+            </ul>
+            <!-- Navbar links -->
+            <div id="navbarNav"> <!-- Removed collapse navbar-collapse classes -->
+                <!-- Search form -->
+                <form class="d-flex ms-auto" role="search" action="{{ route('product.list') }}" method="GET">
+                    <input class="form-control me-2" type="text" name="name"
+                        value="{{ request()->query('name') ?? '' }}" placeholder="Search">
+                    <button class="btn btn-outline-success search-icon" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
 </header>
 
 @section('my-script')
-<script type="text/javascript">
-    function submitLogoutForm(){
-        $('#formLogout').submit();
-    }
-</script>
+    <script type="text/javascript">
+        function submitLogoutForm() {
+            $('#formLogout').submit();
+        }
+    </script>
 @endsection
