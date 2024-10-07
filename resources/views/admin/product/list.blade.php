@@ -54,7 +54,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $data->name }}</td>
-                                                <td>{{ $data->brand_id }}</td>
+                                                <td>{{ $data->getBrand->name }}</td>
                                                 <td>{{ $data->price }}</td>
                                                 <td>{{ $data->des }}</td>
                                                 <td>

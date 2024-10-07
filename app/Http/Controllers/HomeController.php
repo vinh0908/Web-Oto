@@ -22,6 +22,7 @@ class HomeController extends Controller
         //Eloquent
         $products = Product::orderBy('id', 'desc')->limit(12)->get();
         $posts = Post::orderBy('id', 'desc')->limit(12)->get();
+        $products = Product::paginate(6);
 
         $productCategories = ProductCategory::orderBy('name', 'desc')->get();
         $productBrands = ProductBrand::orderBy('name', 'desc')->get();
@@ -77,13 +78,13 @@ class HomeController extends Controller
 
         $products = $products->orderBy($sortBy['field'], $sortBy['sortBy'])->paginate(6);
 
-        $productCategories = ProductCategory::with('products')
-            ->has('products')
+        $productCategories = ProductCategory::with('getProducts')
+            ->has('getProducts')
             ->orderBy('name', 'desc')
             ->get();
 
-        $productBrands = ProductBrand::with('products')
-            ->has('products')
+        $productBrands = ProductBrand::with('getProducts')
+            ->has('getProducts')
             ->orderBy('name', 'desc')
             ->get();
 
@@ -136,6 +137,8 @@ class HomeController extends Controller
         }
 
         $products = $query->orderBy('id', 'desc')->limit(20)->get();
+
+        $products = Product::paginate(9);
 
         // Lấy các danh mục có sản phẩm
         $categories = ProductCategory::has('getProducts')->orderBy('name', 'desc')->get();

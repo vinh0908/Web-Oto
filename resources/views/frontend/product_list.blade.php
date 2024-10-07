@@ -86,7 +86,9 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">{{ $product->name }}</a></h6>
+                                    <h6><a href="#">{{ $productBrand->name }}</a></h6>
                                     <h5>${{ $product->price }}</h5>
+                                    <button style="margin-top: 10px" class="abc" data-url="{{ route('add.product.to.cart', [$product->id, 1]) }}">Thêm vào giỏ</button>
                                 </div>
                             </div>
                         </div>

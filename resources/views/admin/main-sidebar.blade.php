@@ -63,7 +63,7 @@
             <a href="{{ route('admin.post.list') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Posts
+                Blog
               </p>
             </a>
           </li>

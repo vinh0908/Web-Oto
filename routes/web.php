@@ -103,6 +103,7 @@ Route::get('san-pham/{categorySlug?}',[HomeController::class, 'getSanpham'])->na
 
 
 
+
 Route::get('test', function(){
 
     $order = Order::find(1);

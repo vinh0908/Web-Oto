@@ -23,7 +23,7 @@ class ProductController extends Controller
         //Lay toan bo product category
         // $productCategories = ProductCategory::all();
 
-
+        $products = Product::with('getBrand')->orderBy('id', 'desc')->get();
 
         return view('admin.product.list')
             ->with('datas', $products);

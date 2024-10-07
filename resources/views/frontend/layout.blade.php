@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Accessory Moto</title>
+    <title>Web OTO</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -73,6 +73,10 @@
     <!-- Banner Begin -->
     @yield('banner')
     <!-- Banner End -->
+
+    <!-- product_list Begin -->
+    @yield('product_list')
+    <!-- product_list End -->
 
     <!-- Latest Product Section Begin -->
     @yield('latest-product')

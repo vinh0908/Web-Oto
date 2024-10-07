@@ -21,14 +21,35 @@ class Product extends Model
         'weight',
         'category_id',
         'brand_id',
+        'brand_name',
         'slug'
     ];
 
-    public function getCategory(){
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($product) {
+            if ($product->brand_id) {
+                $brand = ProductBrand::find($product->brand_id);
+                if ($brand) {
+                    $product->brand_name = $brand->name;
+                } else {
+                    $product->brand_name = null;
+                }
+            } else {
+                $product->brand_name = null;
+            }
+        });
+    }
+
+    public function getCategory()
+    {
         return $this->belongsTo(ProductCategory::class, 'category_id');
     }
 
-    public function getBrand(){
+    public function getBrand()
+    {
         return $this->belongsTo(ProductBrand::class, 'brand_id');
     }
 
