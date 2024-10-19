@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Web OTO</title>
+    <title>Web Nước Hoa</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="{{ asset('frontend-oto/css/main.css') }}">
 </head>
 
-<body onload="thongbaopopup()" class="backgroud-image-images">
+<body onload="thongbaopopup()" class="backgroud-image-header">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>

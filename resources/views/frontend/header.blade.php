@@ -1,20 +1,22 @@
-<header>
+<header class="backgroud-image-images">
     <div class="contact-info">
-        <p><i class="fas fa-phone-alt"></i> <a href="tel:+123456789">+123 456 789</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="contact-details">
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:+123456789">+123 456 789</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('frontend-oto/images/logo.jpeg') }}" alt="Logo">
+        </a>
     </div>
 
-    <nav style="padding: 0px;" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav style="padding: 0px;" class="navbar navbar-expand-lg navbar-light">
         <div class="d-flex justify-content-end container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('frontend-oto/images/logo.jpeg') }}" alt="Logo">
-            </a>
 
             <button class="navbar-toggler" type="button" id="navToggler">
                 <span class="navbar-toggler-icon"></span>
@@ -114,7 +116,7 @@
         <a class="next" onclick="moveSlide(1)">&#10095;</a>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-custom backgroud-image-header">
         <div class="container">
             <ul style="font-size: 1.4rem;" class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">

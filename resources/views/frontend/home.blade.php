@@ -23,7 +23,7 @@
             <!-- Cột danh mục và thương hiệu -->
             <div class="sidebar">
                 <div class="category">
-                    <h3 style="background: #007bff; margin: 5px;">Danh mục</h3>
+                    <h3 style="background: rgba(203, 178, 190, 0.8); margin: 5px;">Danh mục</h3>
                     <ul>
                         @foreach ($productCategories as $productCategory)
                             <li><a
@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 <div class="brand">
-                    <h3 style="background: #007bff; margin: 5px;">Thương hiệu</h3>
+                    <h3 style="background: rgba(203, 178, 190, 0.8); margin: 5px;">Thương hiệu</h3>
                     <ul>
                         @foreach ($productBrands as $productBrand)
                             <li><a
