@@ -100,6 +100,7 @@ Route::get('product-list',[HomeController::class, 'getProductList'])->name('prod
 Route::get('blog',[HomeController::class, 'getBlog'])->name('blog.list');
 Route::get('contact',[HomeController::class, 'getContact'])->name('contact.list');
 Route::get('san-pham/{categorySlug?}',[HomeController::class, 'getSanpham'])->name('tongsanpham');
+Route::get('AboutUs',[HomeController::class, 'getAboutUs'])->name('aboutus.list');
 
 
 

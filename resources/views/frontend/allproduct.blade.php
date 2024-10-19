@@ -1,6 +1,12 @@
 @extends('frontend.layout');
 
 @section('allproduct')
+<div class="intro-header">
+    <div style="display: block" class="container">
+        <h1>Toàn Bộ Sản Phẩm</h1>
+        <p>Nơi mùi hương gặp gỡ phong cách</p>
+    </div>
+</div>
     <div class="container">
         <!-- Cột sản phẩm -->
         <div class="products-column col-4">
@@ -41,7 +47,7 @@
             </div>
         </div>
         <div class="products-column col-8">
-            <h2 style="text-align: center;">Toàn bộ sản phẩm</h2>
+            {{-- <h2 style="text-align: center;">Toàn bộ sản phẩm</h2> --}}
             <div class="product-grid">
                 @foreach ($products as $product)
                     <div class="product">

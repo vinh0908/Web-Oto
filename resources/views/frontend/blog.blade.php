@@ -2,7 +2,13 @@
 
 
 @section('blog')
-    <h1 style="text-align: center; margin-top: 30px;" class="text-center mb-4">Chào mừng đến với Blog của tôi!</h1>
+<div class="intro-header">
+    <div style="display: block" class="container">
+        <h1>Chào mừng đến với Blog của tôi!</h1>
+        <p>Nơi mùi hương gặp gỡ phong cách</p>
+    </div>
+</div>
+    {{-- <h1 style="text-align: center; margin-top: 30px;" class="text-center mb-4">Chào mừng đến với Blog của tôi!</h1> --}}
 
     <div class="container mt-5">
 

@@ -19,7 +19,7 @@ class ProductController extends Controller
 
         //SELECT * FROM `products` ORDER BY `products`.`id` DESC
         // $products = Product::with('productBrand')->orderBy('id', 'desc')->get();
-        $products = Product::orderBy('id','desc')->get();
+        $products = Product::orderBy('id', 'desc')->get();
         //Lay toan bo product category
         // $productCategories = ProductCategory::all();
 
@@ -86,15 +86,17 @@ class ProductController extends Controller
 
     public function getProductDetail($id)
     {
-        //B1 : tim record nao tuong ung vs id nay`
+        // Lấy thông tin sản phẩm
         $product = Product::find($id);
 
-        //Lay toan bo product category
-        // $productCategories = ProductCategory::all();
+        // Lấy danh sách danh mục sản phẩm
+        $productCategories = ProductCategory::all();
 
-        return view('admin.product.edit')
-            // ->with('productCategories', $productCategories)
-            ->with('product', $product);
+        // Lấy danh sách thương hiệu sản phẩm
+        $productBrands = ProductBrand::all(); // Khởi tạo biến này
+
+        // Truyền dữ liệu vào view
+        return view('admin.product.edit', compact('product', 'productCategories', 'productBrands'));
     }
 
     public function editProduct(Request $request, $id)

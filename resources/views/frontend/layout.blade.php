@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="{{ asset('frontend-oto/css/main.css') }}">
 </head>
 
-<body onload="thongbaopopup()">
+<body onload="thongbaopopup()" class="backgroud-image-images">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>

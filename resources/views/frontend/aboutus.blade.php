@@ -1,90 +1,77 @@
 @extends('frontend.layout')
 
 @section('aboutus')
-    <section class="mt-3 mb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>About</h2>
-                    </div>
-                </div>
+<!-- Intro Header -->
+<div class="intro-header">
+    <div style="display: block" class="container">
+        <h1>Chào mừng bạn đến với TiNy</h1>
+        <p>Nơi mùi hương gặp gỡ phong cách</p>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Về Chúng Tôi</h2>
+            <p>TiNy là địa điểm lý tưởng để bạn khám phá và tìm kiếm những mùi hương độc đáo và phù hợp nhất với phong cách của mình. Chúng tôi tự hào mang đến các sản phẩm nước hoa cao cấp từ các thương hiệu nổi tiếng trên thế giới.</p>
+            <p>Với đội ngũ nhân viên chuyên nghiệp và nhiệt tình, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm tuyệt vời và dịch vụ hậu mãi chu đáo.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ asset('frontend-oto/images/background.jpeg') }}" alt="About Image" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Tại sao chọn chúng tôi?</h2>
+    <div class="row">
+        <div class="col-md-4 feature-box">
+            <h3>Sản phẩm chất lượng</h3>
+            <p>Chúng tôi cam kết chỉ cung cấp những sản phẩm chính hãng, đảm bảo chất lượng và an toàn cho người sử dụng.</p>
+        </div>
+        <div class="col-md-4 feature-box">
+            <h3>Đa dạng lựa chọn</h3>
+            <p>Từ những mùi hương nhẹ nhàng, tinh tế cho đến những nốt hương mạnh mẽ, quyến rũ, chúng tôi có đủ mọi phong cách để đáp ứng nhu cầu đa dạng của bạn.</p>
+        </div>
+        <div class="col-md-4 feature-box">
+            <h3>Dịch vụ tận tâm</h3>
+            <p>Đội ngũ nhân viên chuyên nghiệp và nhiệt tình của chúng tôi luôn sẵn sàng tư vấn, giúp bạn tìm ra mùi hương phù hợp nhất với cá tính và sở thích của mình.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial Section -->
+<div class="testimonial-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Đánh giá từ khách hàng</h2>
+        <div class="row">
+            <div class="col-md-4 testimonial-box">
+                <img src="https://via.placeholder.com/80x80" alt="Customer 1">
+                <p>"Sản phẩm chất lượng tuyệt vời, mùi hương rất thơm và lâu phai. Tôi rất hài lòng với dịch vụ của cửa hàng."</p>
+                <h4>Nguyễn Văn A</h4>
             </div>
-            <div class="row history">
-                <div class="col-lg-5">
-                    <div class="text-end mt-2 fw-bolder">2009-2011</div>
-                    <div class="text-end mt-2 fw-bolder">Shop Phụ Kiện</div>
-                    <div class="text-end mt-1 fst-italic text-secondary">
-                        Với đội ngũ nhân viên chuyên nghiệp, có nhiều năm trong nghề, chịu khó và ham học hỏi. Cùng sự góp
-                        sức của các chuyên gia dày dặn kinh nghiệm trong giới chơi xe moto, chúng tôi tự hào khi mang đến
-                        những sản phẩm cao cấp với sự an toàn và phong cách cho người sử dụng, qua đó nhằm thỏa mãn nhu cầu
-                        cho những ai đam mê mô tô và những người đam mê đi phượt
-                        Song song đó, chúng tôi luôn luôn cập nhật những thông tin mới nhất về sản phẩm cho khách hàng, nhằm
-                        đáp ứng nhu cầu phát triển cho người chơi moto nói riêng và những ai đam mê mô tô nói chung.
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="line"></div>
-                    <div class="text-center">
-
-                        <img class="medium-box border-5 border rounded-circle"
-                            src="https://www.motosoft.vn/uploads/files/tin-tuc-phan-mem-motor-net/dai-ly-phu-tung-xe-may.jpg" />
-                    </div>
-                </div>
-                <div class="col-lg-5">
-
-                </div>
+            <div class="col-md-4 testimonial-box">
+                <img src="https://via.placeholder.com/80x80" alt="Customer 2">
+                <p>"Đội ngũ nhân viên rất nhiệt tình và chuyên nghiệp. Tôi đã tìm được mùi hương ưng ý thanks to their advice."</p>
+                <h4>Trần Thị B</h4>
             </div>
-            <div class="row history">
-                <div class="col-lg-5">
-
-                </div>
-                <div class="col-lg-2">
-                    <div class="line"></div>
-                    <div class="text-center">
-                        <img class="medium-box border-5 border rounded-circle"
-                            src="https://toplist.vn/images/800px/yohe-shop-852919.jpg" />
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="text-start mt-2 fw-bolder">March 2011</div>
-                    <div class="text-start mt-2 fw-bolder">Triết lý của chúng tôi</div>
-                    <div class="text-start mt-1 fst-italic text-secondary">
-                        Khách hàng là giá trị cơ bản của bất kỳ doanh nghiệp nào, là lý do duy nhất để doanh nghiệp tồn tại
-                        và phát triển. Chính sách "khách hàng là trung tâm" chỉ lối dẫn đường cho mọi hoạt động của công ty.
-
-                        Chúng tôi lắng nghe, phân tích và thấu hiểu nhu cầu của từng khách hàng và cố gắng đáp ứng tối đa
-                        những nhu cầu đó, giúp http://shopphukienmoto.com tập trung vào các hoạt động kinh doanh cốt lõi của
-                        mình. Mỗi khách hàng là một viên gạch xây nên giá trị của shop.
-                    </div>
-                </div>
-            </div>
-            <div class="row history">
-                <div class="col-lg-5">
-                    <div class="text-end mt-2 fw-bolder">2009-2011</div>
-                    <div class="text-end mt-2 fw-bolder">Định hướng phát triển</div>
-                    <div class="text-end mt-1 fst-italic text-secondary">
-                        - Giữ vững và ngày càng tăng tốc độ phát triển trên mọi chỉ tiêu: doanh số, thị phần, nhân lực, giá
-                        trị thương hiệu, số lượng sản phẩm (phụ kiện moto, mũ bảo hiểm, thùng xe mô tô (xe máy), phụ kiện
-                        phượt, ...)
-
-                        - Phát huy và nâng cao thế mạnh sẵn có của http://shopphukienmoto.com/ về quản lý, mua bán, gia
-                        công.
-
-                        Với mong muốn được phục vụ các khách hàng ngày càng chu đáo hơn, chúng tôi luôn sẵn sàng tiếp nhận
-                        và biết ơn mọi sự góp ý của khách hàng.
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="text-center">
-                        <img class="medium-box border-5 border rounded-circle"
-                            src="https://toplist.vn/images/800px/yohe-shop-852919.jpg" />
-                    </div>
-                </div>
-                <div class="col-lg-5">
-
-                </div>
+            <div class="col-md-4 testimonial-box">
+                <img src="https://via.placeholder.com/80x80" alt="Customer 3">
+                <p>"Cửa hàng có nhiều lựa chọn nước hoa, giá cả hợp lý. Tôi sẽ tiếp tục ủng hộ."</p>
+                <h4>Lê Văn C</h4>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="call-to-action">
+    <div style="display: block" class="container">
+        <h3>Khám phá ngay bộ sưu tập nước hoa đa dạng và độc đáo của chúng tôi</h3>
+    </div>
+    <a href="{{ route('tongsanpham') }}" class="btn btn-primary btn-lg">Mua sắm ngay</a>
+</div>
+
 @endsection

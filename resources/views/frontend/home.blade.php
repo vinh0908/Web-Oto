@@ -10,6 +10,13 @@
 
 
 @section('featured-product')
+<div class="intro-header">
+    <div style="display: block" class="container">
+        <h1>Cửa hàng nước hoa</h1>
+        <p>Nơi mùi hương gặp gỡ phong cách</p>
+        <p>TiNy</p>
+    </div>
+</div>
     <div class="container">
         <!-- Cột sản phẩm -->
         <div class="products-column col-4">
@@ -50,7 +57,7 @@
             </div>
         </div>
         <div class="products-column col-8">
-            <h2 style="text-align: center;">Sản phẩm</h2>
+            {{-- <h2 style="text-align: center;">Sản phẩm</h2> --}}
             <div class="product-grid">
                 @foreach ($products as $product)
                     <div class="product">
@@ -80,7 +87,7 @@
 @endsection
 
 @section('from-blog')
-    <h2 style="text-align: center">Bài viết</h2>
+    {{-- <h2 style="text-align: center">Bài viết</h2> --}}
     <div class="container my-5">
         <div class="row">
             <!-- Bài viết 1 -->

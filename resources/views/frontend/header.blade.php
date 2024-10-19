@@ -13,7 +13,7 @@
     <nav style="padding: 0px;" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="d-flex justify-content-end container">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('frontend-oto/image/auto-car-logo-template-vector-icon.jpg') }}" alt="Logo">
+                <img src="{{ asset('frontend-oto/images/logo.jpeg') }}" alt="Logo">
             </a>
 
             <button class="navbar-toggler" type="button" id="navToggler">
@@ -80,7 +80,7 @@
     <div class="slider">
         <div class="slides">
             <div class="slide">
-                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 1">
+                <img src="{{ asset('frontend-oto/images/blog/blog1.jpeg') }}" alt="Ảnh 1">
                 <div class="text">
                     <h1>BMW</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis assumenda soluta esse
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 2">
+                <img src="{{ asset('frontend-oto/images/blog/blog2.jpeg') }}" alt="Ảnh 2">
                 <div class="text">
                     <h1>BMW</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla laudantium natus!
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="{{ asset('frontend-oto/image/anhcon.jpeg') }}" alt="Ảnh 3">
+                <img src="{{ asset('frontend-oto/images/blog/blog3.jpeg') }}" alt="Ảnh 3">
                 <div class="text">
                     <h1>BMW</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque est alias facilis nesciunt
@@ -121,8 +121,7 @@
                     <a class="nav-color nav-link active" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-color nav-link" href="{{ route('aboutus.list') }}">Shop</a> --}}
-                    <a class="nav-color nav-link" href="">Shop</a>
+                    <a class="nav-color nav-link" href="{{ route('aboutus.list') }}">Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-color nav-link" href="{{ route('tongsanpham') }}">Product</a>

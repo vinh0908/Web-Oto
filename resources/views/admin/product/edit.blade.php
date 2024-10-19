@@ -112,6 +112,19 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Product Brand</label>
+                                        <select name="brand_id" class="form-control">
+                                            <option value="">---Please Select---</option>
+                                            @foreach ($productBrands as $productBrand)
+                                                <option
+                                                    {{ $product->brand_id == $productBrand->id ? 'selected' : '' }}
+                                                    value="{{ $productBrand->id }}">
+                                                    {{ $productBrand->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
 

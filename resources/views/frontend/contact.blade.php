@@ -1,6 +1,12 @@
 @extends('frontend.layout')
 
 @section('contacts')
+<div class="intro-header">
+    <div style="display: block" class="container">
+        <h1>Thông tin liên hệ</h1>
+        <p>Nơi mùi hương gặp gỡ phong cách</p>
+    </div>
+</div>
 <div class="container contact-container">
     <div class="row">
         <div class="col-md-6">
