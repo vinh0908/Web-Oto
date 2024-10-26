@@ -118,7 +118,7 @@
             <div class="tbclose-btn" onclick="thongbaopopup()">&times;</div>
             <div style="font-size:30px;font-weight:bold">Khuyến mãi tết giảm giá 50%</div>
             <p>Kính chào quý khách hàng.</p>
-            <p>Chương trình khuyến mãi Tết, <strong>Shopphukienmoto</strong> xin thông báo khuyến mãi <strong>giảm giá
+            <p>Chương trình khuyến mãi Tết, <strong>Shop Lưu Hương</strong> xin thông báo khuyến mãi <strong>giảm giá
                     từ 10% đến 50%</strong> khi mua sản
                 phẩm tại cửa hàng.</p>
             <p>Và để tiện phục vụ từ ngày 29/01/2022 chúng tôi chuyển về địa chỉ mới: <strong>số 67 Nguyễn thị minh

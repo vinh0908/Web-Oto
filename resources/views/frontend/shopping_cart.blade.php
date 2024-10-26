@@ -90,8 +90,8 @@
         </div>
         <div style="margin-bottom: 20px" class="cart-header">
             <h3 style="margin-bottom: 10px">Tổng Cộng: {{ number_format($total, 2) }}VNĐ</h3>
-            <a href="{{ route('tongsanpham') }}" class="btn btn-primary">Tiếp Tục Mua Sắm</a>
-            <a href="{{ route('checkout') }}" class="btn btn-success ml-2">Thanh Toán</a>
+            <a style="background-color: rgba(215, 196, 205, 0.8);" href="{{ route('tongsanpham') }}" class="btn btn-primary">Tiếp Tục Mua Sắm</a>
+            <a style="background-color: rgba(203, 178, 190, 0.8); color:black" href="{{ route('checkout') }}" class="btn btn-success ml-2">Thanh Toán</a>
         </div>
     </div>
 @endsection

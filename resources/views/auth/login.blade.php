@@ -39,7 +39,7 @@
                         </div>
                         <button type="submit" class="btn auth-button">Login</button>
                         @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <a style="color: rgba(203, 178, 190, 0.8);" class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('Quên mật khẩu?') }}
                             </a>
                         @endif

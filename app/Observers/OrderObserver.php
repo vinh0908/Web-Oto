@@ -44,7 +44,7 @@ class OrderObserver
 
         // dd($order);
 
-        Mail::to("nguyenlyhuuphuc@gmail.com")->send(new OrderMail($data));
+        Mail::to("lehuuvinh@gmail.com")->send(new OrderMail($data));
     }
 
     /**
@@ -62,7 +62,7 @@ class OrderObserver
                 $data['order_id'] = $order->id;
                 $data['status'] = $order->status;
 
-                Mail::to("nguyenlyhuuphuc@gmail.com")->send(new OrderUpdateMail($data));
+                Mail::to("lehuuvinh@gmail.com")->send(new OrderUpdateMail($data));
             }
         }
     }

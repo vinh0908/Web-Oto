@@ -84,7 +84,7 @@
             <div class="slide">
                 <img src="{{ asset('frontend-oto/images/blog/blog1.jpeg') }}" alt="Ảnh 1">
                 <div class="text">
-                    <h1>BMW</h1>
+                    <h1>Malissa Kiss</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis assumenda soluta esse
                         recusandae provident tempora odio. Quae suscipit voluptate distinctio sed illum rem corrupti
                         sit officiis, unde iusto est perspiciatis.</p>
@@ -94,7 +94,7 @@
             <div class="slide">
                 <img src="{{ asset('frontend-oto/images/blog/blog2.jpeg') }}" alt="Ảnh 2">
                 <div class="text">
-                    <h1>BMW</h1>
+                    <h1>Laura Anne</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla laudantium natus!
                         Necessitatibus qui impedit corporis. Iusto, sed, facilis quia expedita tempore atque ipsam
                         sapiente, culpa accusamus sint totam. Harum!</p>
@@ -104,7 +104,7 @@
             <div class="slide">
                 <img src="{{ asset('frontend-oto/images/blog/blog3.jpeg') }}" alt="Ảnh 3">
                 <div class="text">
-                    <h1>BMW</h1>
+                    <h1>Kiss My Body</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque est alias facilis nesciunt
                         eligendi esse atque blanditiis dolorem eum numquam? Debitis assumenda et placeat molestiae
                         eius cumque ex eum dolore.</p>

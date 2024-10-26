@@ -13,25 +13,25 @@
                     <!-- Cột con 1 -->
                     <div class="col-sm-3">
                         <img src="{{ asset('frontend-oto/images/product/product1.jpeg') }}" alt="Image 1" class="card-img">
-                        <h5>Title</h5>
+                        <h5 style="color: white">Title</h5>
                         <p>24/03/2024</p>
                     </div>
                     <!-- Cột con 2 -->
                     <div class="col-sm-3">
                         <img src="{{ asset('frontend-oto/images/product/product13.jpeg') }}" alt="Image 2" class="card-img">
-                        <h5>Title</h5>
+                        <h5 style="color: white">Title</h5>
                         <p>24/03/2024</p>
                     </div>
                     <!-- Cột con 3 -->
                     <div class="col-sm-3">
                         <img src="{{ asset('frontend-oto/images/product/product4.jpeg') }}" alt="Image 3" class="card-img">
-                        <h5>Title</h5>
+                        <h5 style="color: white">Title</h5>
                         <p>24/03/2024</p>
                     </div>
                     <!-- Cột con 4 -->
                     <div class="col-sm-3">
                         <img src="{{ asset('frontend-oto/images/product/product5.jpeg') }}" alt="Image 4" class="card-img">
-                        <h5>Title</h5>
+                        <h5 style="color: white">Title</h5>
                         <p>24/03/2024</p>
                     </div>
                 </div>
