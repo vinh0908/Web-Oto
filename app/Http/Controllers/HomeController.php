@@ -106,6 +106,15 @@ class HomeController extends Controller
             ->with('posts', $posts);
     }
 
+    public function getBlogDetail()
+    {
+        $posts = Post::orderBy('id', 'desc')->get();
+
+
+        return view('frontend.blog-detail')
+            ->with('posts', $posts);
+    }
+
     public function getAboutUs()
     {
         return view('frontend.aboutus');
@@ -138,7 +147,7 @@ class HomeController extends Controller
 
         $products = $query->orderBy('id', 'desc')->limit(20)->get();
 
-        $products = Product::paginate(9);
+        $products = $query->orderBy('id', 'desc')->paginate(9);
 
         // Lấy các danh mục có sản phẩm
         $categories = ProductCategory::has('getProducts')->orderBy('name', 'desc')->get();

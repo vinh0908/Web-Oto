@@ -26,7 +26,7 @@
                             <p class="card-text">
                                 {{ $post->des }}
                             </p>
-                            <a href="#" class="btn btn-primary">Đọc tiếp</a>
+                            <a href="{{ route('blog-detail.list', $post->id) }}" class="btn btn-primary">Đọc tiếp</a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">{{ $post->datetime }}</small>

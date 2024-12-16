@@ -1,8 +1,8 @@
 <header class="backgroud-image-images">
     <div class="contact-info">
         <div class="contact-details">
-            <p><i class="fas fa-phone-alt"></i> <a href="tel:+123456789">+123 456 789</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:+123456789">090 2346 044</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:example@gmail.com">lehuuvinh159@gmail.com</a></p>
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>

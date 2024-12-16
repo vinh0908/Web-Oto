@@ -98,10 +98,10 @@ Auth::routes();
 
 Route::get('product-list',[HomeController::class, 'getProductList'])->name('product.list');
 Route::get('blog',[HomeController::class, 'getBlog'])->name('blog.list');
+Route::get('blog-detail/{id}',[HomeController::class, 'getBlogDetail'])->name('blog-detail.list');
 Route::get('contact',[HomeController::class, 'getContact'])->name('contact.list');
 Route::get('san-pham/{categorySlug?}',[HomeController::class, 'getSanpham'])->name('tongsanpham');
 Route::get('AboutUs',[HomeController::class, 'getAboutUs'])->name('aboutus.list');
-
 
 
 

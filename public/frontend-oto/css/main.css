@@ -847,8 +847,8 @@ label {
 }
 
 .add-to-cart-button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: rgba(203, 178, 190, 0.8);
+    color: black;
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
@@ -857,7 +857,7 @@ label {
 }
 
 .add-to-cart-button:hover {
-    background-color: #0069d9;
+    background-color: rgba(210, 187, 199, 0.8);
 }
 
 .product-brand {
@@ -1000,4 +1000,25 @@ label {
 /* Background images header */
 .backgroud-image-header {
     background: rgba(244, 232, 238, 0.8);
+}
+
+/* Tiêu đề bài viết */
+.article-content {
+    line-height: 1.6;
+}
+
+.author, .date {
+    margin-bottom: 10px;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.date {
+    color: #666;
+}
+
+.article-image {
+    margin-bottom: 20px;
 }

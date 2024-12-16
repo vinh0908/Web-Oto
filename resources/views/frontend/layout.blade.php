@@ -90,6 +90,8 @@
 
     @yield('blog')
 
+    @yield('blog-detail')
+
     @yield('allproduct')
 
     @yield('login')
